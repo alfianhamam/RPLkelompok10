@@ -1,0 +1,7 @@
+{
+  "name": "appsbelajar",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
