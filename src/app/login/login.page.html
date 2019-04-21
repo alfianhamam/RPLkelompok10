@@ -1,18 +1,36 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content padding>
-	<ion-list>
-		<ion-item>
-			<ion-input placeholder="Username or Email" type="text"></ion-input>
-		</ion-item>
-		<ion-item>
-			<ion-input placeholder="Password" type="password"></ion-input>
-		</ion-item>
-	</ion-list>
+  
+<div id="container">
+  <div>
+    <ion-item>
+      <ion-input type="text" placeholder="Email" [(ngModel)]="email"></ion-input>
+    </ion-item>
 
-	<ion-button full> Log In </ion-button>
+    <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </div>
+  
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <div id="signup" text-left>
+        <a style="color:cornflowerblue; margin-top:10%;" >Belum punya akun?</a> 
+      </div>
+    </ion-col>
+  
+    <ion-col>
+      <div id="forgotpassword" text-right>
+        <a style="color:cornflowerblue; margin-top:10%;" >Lupa password?</a>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+  
+  <div id="login">
+    <ion-button expand="block" fill="solid" shape="round">Sign In</ion-button>
+  </div>
+  
+</div>
 </ion-content>
