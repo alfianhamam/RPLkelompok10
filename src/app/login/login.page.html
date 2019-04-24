@@ -3,11 +3,11 @@
 <div id="container">
   <div>
     <ion-item>
-      <ion-input type="text" placeholder="Email" [(ngModel)]="email"></ion-input>
+      <ion-input type="text" placeholder="Email"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+      <ion-input type="password" placeholder="Password" ></ion-input>
     </ion-item>
   </div>
   
@@ -15,7 +15,7 @@
   <ion-row>
     <ion-col>
       <div id="signup" text-left>
-        <a style="color:cornflowerblue; margin-top:10%;" >Belum punya akun?</a> 
+        <a style="color:cornflowerblue; margin-top:10%;" (click)="goregist()" >Belum punya akun?</a> 
       </div>
     </ion-col>
   
@@ -29,7 +29,7 @@
 
   
   <div id="login">
-    <ion-button expand="block" fill="solid" shape="round">Sign In</ion-button>
+    <ion-button expand="block" fill="solid" shape="round" (click)="gohome()">Sign In</ion-button>
   </div>
   
 </div>
