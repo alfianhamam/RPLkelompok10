@@ -22,5 +22,9 @@ export class HomePage {
     this.route.navigate(['event']);
   }
 
+  gosearch(){
+    this.route.navigate(['search']);
+  }
+
 }
 

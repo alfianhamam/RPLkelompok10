@@ -1,9 +1,48 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+  <div style="display: flex; justify-content: center;">
+    <img src="https://www.zooborns.com/.a/6a010535647bf3970b017ee997dd63970d-500wi" width="150" height="150">
+  </div>
 
+  <ion-list>
+    <ion-item>
+      <ion-label>Nama</ion-label>
+      Alfian Hamam Akbar
+    </ion-item>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      hamam_18@apps.ipb.ac.id
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Statistics
+    </ion-list-header>
+    <ion-item>
+      Event Done
+      <ion-note slot="end">
+        {{done}}
+      </ion-note>
+    </ion-item>
+    <ion-item>
+      Total event
+      <ion-note slot="end">
+        {{total}}
+      </ion-note>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-button color="primary" expand="block" shape="round">Edit Profile</ion-button>
+  <br />
+  <ion-button color="danger" expand="block" shape="round">Sign Out</ion-button>
 </ion-content>

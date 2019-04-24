@@ -11,8 +11,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent {
 
   public appMenu = [
-      {title: 'My Profile' , url: '/test1', icon: 'people'},
-      {title: 'My Event' , url: '/test2', icon: 'list-box'},
+      {title: 'My Profile' , url: '/profile', icon: 'people'},
+      {title: 'My Event' , url: '/event', icon: 'list-box'},
       {title: 'Reminder' , url: '/test3', icon: 'notifications'},
       {title: 'Setting' , url: '/test3', icon: 'settings'}
   ];
