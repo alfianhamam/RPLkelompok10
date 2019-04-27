@@ -26,5 +26,13 @@ export class HomePage {
     this.route.navigate(['search']);
   }
 
+  goprofile(){
+    this.route.navigate(['profile']);
+  }
+
+  gohome(){
+    this.route.navigate(['home']);
+  }
+
 }
 
