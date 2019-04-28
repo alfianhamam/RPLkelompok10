@@ -14,10 +14,6 @@ export class HomePage {
     private route: Router){
   }
 
-  gologin(){
-    this.route.navigate(['login']);
-  }
-
   goevent(){
     this.route.navigate(['event']);
   }
@@ -33,6 +29,14 @@ export class HomePage {
   gohome(){
     this.route.navigate(['home']);
   }
+
+  gotologin(){
+    this.route.navigate(['login']);
+  }
+
+  gotoregister(){
+    this.route.navigate(['register']);
+  };
 
 }
 
