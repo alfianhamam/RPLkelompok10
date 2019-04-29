@@ -2,55 +2,45 @@
 
   <div id="container">
     <div>
-      <ion-label slot="start">Nama</ion-label>
       <ion-item>
-        <ion-input type="text" placeholder="Nama"></ion-input>
+        <ion-label position="floating">Nama</ion-label>
+        <ion-input type="text" [(ngModel)]="nama"></ion-input>
       </ion-item>
       <br>
 
-      <ion-label slot="start">Jenis Kelamin</ion-label>
-      <ion-list>
-        <ion-radio-group>
-          <ion-item>
-            <ion-radio value="Laki laki"></ion-radio>
-            <ion-label>Laki laki</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-radio value="Perempuan"></ion-radio>
-            <ion-label>Perempuan</ion-label>
-          </ion-item>
-        </ion-radio-group>
-      </ion-list>
-      <br>
-
-      <ion-label slot="start">Alamat</ion-label>
       <ion-item>
-        <ion-textarea placeholder="Masukan alamat mu di sini"></ion-textarea>
+        <ion-label position="floating">Alamat</ion-label>
+        <ion-textarea placeholder="Masukan alamat mu di sini" [(ngModel)]="alamat"></ion-textarea>
       </ion-item>
       <br>
 
-      <ion-label slot="start">No Handphone</ion-label>
       <ion-item>
-        <ion-input type="number" placeholder="No Handphone"></ion-input>
+        <ion-label position="floating">No Handphone</ion-label>
+        <ion-input type="text" [(ngModel)]="no_hp"></ion-input>
       </ion-item>
       <br>
 
-      <ion-label slot="start">Email</ion-label>
       <ion-item>
-        <ion-input type="text" placeholder="Email"></ion-input>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" [(ngModel)]="email"></ion-input>
       </ion-item>
       <br>
 
-      <ion-label slot="start">Password</ion-label>
       <ion-item>
-        <ion-input type="password" placeholder="Password"></ion-input>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
       </ion-item>
       <br>
+
+      <ion-item>
+        <ion-label position="floating">Confirm Password</ion-label>
+        <ion-input type="password" [(ngModel)]="cpassword"></ion-input>
+      </ion-item>
     </div>
 
 
     <div id="register">
-      <ion-button expand="block" fill="solid" shape="round" (click)="gologin()">Register</ion-button>
+      <ion-button expand="block" fill="solid" shape="round" (click)="register()">Register</ion-button>
     </div>
 
   </div>

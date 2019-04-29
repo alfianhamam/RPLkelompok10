@@ -3,11 +3,13 @@
 <div id="container">
   <div>
     <ion-item>
-      <ion-input type="text" placeholder="Email"></ion-input>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" [(ngModel)]="email"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="password" placeholder="Password" ></ion-input>
+        <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password" ></ion-input>
     </ion-item>
   </div>
   
@@ -29,7 +31,7 @@
 
   
   <div id="login">
-    <ion-button expand="block" fill="solid" shape="round" (click)="gohome()">Sign In</ion-button>
+    <ion-button expand="block" fill="solid" shape="round" (click)="login()">Sign In</ion-button>
   </div>
   
 </div>
