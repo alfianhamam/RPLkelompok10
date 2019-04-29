@@ -56,6 +56,8 @@ export class LoginPage implements OnInit {
         if(err.code === "auth/user-not-found"){
           console.log("User not found")
           this.showalert("Error", "User not found")
+        } else {
+          this.showalert("Error", err.message)
         }
     }
   }
