@@ -1,14 +1,14 @@
 <ion-header>
-  	<ion-toolbar color="primary">
-  		<ion-buttons slot="start">
-  		</ion-buttons>
-    	<ion-title text-center>
-      			Yuk Sehat 
+	<ion-toolbar color="primary">
+		<ion-buttons slot="start">
+		</ion-buttons>
+		<ion-title text-center>
+			Yuk Sehat
 		</ion-title>
-		
+
 		<ion-icon slot="end" size="large" name="search" button (click)="gosearch()"></ion-icon>
-  	</ion-toolbar>
-</ion-header> 
+	</ion-toolbar>
+</ion-header>
 
 <ion-content padding>
 
@@ -16,5 +16,8 @@
 		<ion-button expand="block" fill="solid" shape="round" (click)="gotoregister()">Register</ion-button>
 	</div>
 
-</ion-content>
+	<div id="login">
+		<ion-button expand="block" fill="solid" shape="round" (click)="gotologin()">Login</ion-button>
+	</div>
 
+</ion-content>
