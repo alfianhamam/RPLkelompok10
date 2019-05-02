@@ -3,7 +3,7 @@ import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Http } from '@angular/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-edit-profile',
@@ -20,6 +20,7 @@ export class EditProfilePage implements OnInit {
   email: string
   password: string
   newpassword: string
+  profilePic: string
 
   busy: boolean = false
 
@@ -36,6 +37,7 @@ export class EditProfilePage implements OnInit {
       this.alamat = event.alamat
       this.no_hp = event.no_hp
       this.email = event.email
+      this.profilePic = event.profilePic
     })
   }
 
@@ -111,5 +113,4 @@ export class EditProfilePage implements OnInit {
 
     this.route.navigate(['tabs/profile'])
   }
-
 }

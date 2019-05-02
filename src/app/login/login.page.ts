@@ -16,6 +16,7 @@ export class LoginPage implements OnInit {
   no_hp: string = ""
   email:string = ""
   password:string = ""
+  profilePic:string = ""
 
   constructor(
     private route:Router,
@@ -32,7 +33,7 @@ export class LoginPage implements OnInit {
   }
 
   async login(){
-    const { nama, alamat, no_hp, email, password } = this
+    const { nama, alamat, no_hp, email, password, profilePic } = this
     try{
         const res = await this.afAuth.auth.signInWithEmailAndPassword(email, password)
         
@@ -43,6 +44,7 @@ export class LoginPage implements OnInit {
            no_hp,
            email,
            password,
+           profilePic,
            uid: res.user.uid
           })
 

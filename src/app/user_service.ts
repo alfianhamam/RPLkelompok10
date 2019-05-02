@@ -5,6 +5,7 @@ import { auth } from 'firebase/app';
 
 
 interface user{
+    profilePic: string,
     nama: string,
     alamat: string,
     no_hp: string,

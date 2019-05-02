@@ -9,10 +9,15 @@
 
 <ion-content padding>
 
-
-
   <div style="display: flex; justify-content: center;">
-    <img src="https://www.zooborns.com/.a/6a010535647bf3970b017ee997dd63970d-500wi" width="150" height="150">
+    <div *ngIf="profilePic" (click)="updatepic()">
+      <img alt="avatar" class="rounds" src="https://ucarecdn.com/{{ profilePic }}/" width="150" height="150">
+    </div>
+
+    <div *ngIf="!profilePic" (click)="updatepic()">
+      <img alt="avatar" class="rounds" src="./../../../assets/profilePic_Default.png" width="150" height="150">
+    </div>
+
   </div>
 
   <div class="profile-info" *ngIf="nama">
@@ -36,24 +41,24 @@
     </ion-list>
   </div>
 
-    <ion-list>
-      <ion-list-header>
-        Statistics
-      </ion-list-header>
-      <ion-item>
-        Event Done
-        <ion-note slot="end">
-          {{done}}
-        </ion-note>
-      </ion-item>
-      <ion-item>
-        Total event
-        <ion-note slot="end">
-          {{total}}
-        </ion-note>
-      </ion-item>
-    </ion-list>
-  
+  <ion-list>
+    <ion-list-header>
+      Statistics
+    </ion-list-header>
+    <ion-item>
+      Event Done
+      <ion-note slot="end">
+        {{done}}
+      </ion-note>
+    </ion-item>
+    <ion-item>
+      Total event
+      <ion-note slot="end">
+        {{total}}
+      </ion-note>
+    </ion-item>
+  </ion-list>
+
 
 
 

@@ -18,9 +18,10 @@ export class ProfilePage implements OnInit {
   alamat: string
   no_hp: string
   email: string
+  profilePic: string
 
   constructor(
-      private http: Http,
+      public http: Http,
       private afs: AngularFirestore,
       private route: Router,
       private alert: AlertController,
@@ -32,6 +33,7 @@ export class ProfilePage implements OnInit {
           this.alamat = event.alamat
           this.no_hp = event.no_hp
           this.email = event.email
+          this.profilePic = event.profilePic
       })
   }
 
@@ -44,6 +46,10 @@ export class ProfilePage implements OnInit {
 
   gotoedit(){
     this.route.navigate(['edit-profile'])
+  }
+
+  updatepic(){
+    this.route.navigate(['uploadpic'])
   }
 
 }

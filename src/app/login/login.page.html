@@ -1,38 +1,42 @@
 <ion-content padding>
-  
-<div id="container">
-  <div>
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" [(ngModel)]="email"></ion-input>
-    </ion-item>
 
-    <ion-item>
+  <div id="container">
+    <div style="display: flex; justify-content: center;">
+      <img src="./../../../assets/logo_transparent.png" width="200" height="200">
+    </div>
+
+  
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
         <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" [(ngModel)]="password" ></ion-input>
-    </ion-item>
-  </div>
-  
-<ion-grid>
-  <ion-row>
-    <ion-col>
-      <div id="signup" text-left>
-        <a style="color:cornflowerblue; margin-top:10%;" (click)="goregist()" >Belum punya akun?</a> 
-      </div>
-    </ion-col>
-  
-    <ion-col>
-      <div id="forgotpassword" text-right>
-        <a style="color:cornflowerblue; margin-top:10%;" >Lupa password?</a>
-      </div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+    
 
-  
-  <div id="login">
-    <ion-button expand="block" fill="solid" shape="round" (click)="login()">Sign In</ion-button>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div id="signup" text-left>
+            <a style="color:#FDFFF0; margin-top:10%;" (click)="goregist()">Belum punya akun?</a>
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <div id="forgotpassword" text-right>
+            <a style="color:#FDFFF0; margin-top:10%;">Lupa password?</a>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    <div id="login">
+      <ion-button color="#FA8804" expand="block" fill="solid" shape="round" (click)="login()">Sign In</ion-button>
+    </div>
+
   </div>
-  
-</div>
 </ion-content>

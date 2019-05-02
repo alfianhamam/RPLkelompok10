@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Upload Profile Picture</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!profilePic" class="container">
+    <h1>
+      Choose your Profile Picture
+    </h1>
+    <label for="file-upload" class="custom-file-upload">
+      Upload Here
+    </label>
+    <input id="file-upload" type="file" (change)="fileChanged($event)">
+  </div>
+  <div *ngIf="profilePic" class="gambar">
+    <img src="https://ucarecdn.com/{{profilePic}}/">
+    <br>
+    <ion-button expand="block" (click)="confirmPicture()">
+      Confirm
+    </ion-button>
+  </div>
+
+</ion-content>

@@ -1,3 +1,4 @@
+import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventPage implements OnInit {
 
-  constructor() { }
+  imageURL: string
+
+  constructor(
+    public http: Http
+  ) { }
 
   ngOnInit() {
   }
-
 }
