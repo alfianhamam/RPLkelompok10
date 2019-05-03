@@ -29,14 +29,5 @@ export class HomePage {
   gohome(){
     this.route.navigate(['home']);
   }
-
-  gotologin(){
-    this.route.navigate(['login']);
-  }
-
-  gotoregister(){
-    this.route.navigate(['register']);
-  };
-
 }
 

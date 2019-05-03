@@ -1,4 +1,6 @@
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tabs',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabsPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public afAuth: AngularFireAuth,
+    private route: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  gotologin(){
+      this.route.navigate(['login'])
   }
 
 }

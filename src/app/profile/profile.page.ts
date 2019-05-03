@@ -1,9 +1,11 @@
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { UserService } from './../user_service';
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-profile',
@@ -25,7 +27,8 @@ export class ProfilePage implements OnInit {
       private afs: AngularFirestore,
       private route: Router,
       private alert: AlertController,
-      private user: UserService
+      private user: UserService,
+      public afAuth: AngularFireAuth
   ) {
       this.mainuser= afs.doc(`users/${user.getUID()}`)
       this.sub = this.mainuser.valueChanges().subscribe(event => {
@@ -50,6 +53,12 @@ export class ProfilePage implements OnInit {
 
   updatepic(){
     this.route.navigate(['uploadpic'])
+  }
+
+  signout(){
+      this.afAuth.auth.signOut().then(() =>{
+        this.route.navigate([''])
+      })
   }
 
 }

@@ -71,6 +71,4 @@ export class UserService{
     updateNama(newnama: string){
         return this.user.nama = newnama
     }
-
-
 }
