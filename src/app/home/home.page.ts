@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 @Component({
@@ -11,7 +12,9 @@ import { Router } from '@angular/router';
 export class HomePage {
 
   constructor(
-    private route: Router){
+    private route: Router,
+    public afAuth: AngularFireAuth
+    ){
   }
 
   goevent(){
@@ -28,6 +31,10 @@ export class HomePage {
 
   gohome(){
     this.route.navigate(['home']);
+  }
+
+  gotoCreateEvent(){
+    this.route.navigate(['create-event']);
   }
 }
 

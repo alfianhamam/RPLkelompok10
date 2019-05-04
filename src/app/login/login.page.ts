@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +22,8 @@ export class LoginPage implements OnInit {
     private route:Router,
     public afAuth: AngularFireAuth,
     public alert: AlertController,
-    public user:UserService
+    public user:UserService,
+    public toastCtrl: ToastController
   ) { }
 
   ngOnInit() {
@@ -51,7 +52,7 @@ export class LoginPage implements OnInit {
           this.route.navigate(['']);
         }
 
-        this.showalert("Success", "Welcome")
+        this.showToast("Welcome to Yuk Sehat")
         
     } catch(err) {
         console.dir(err)
@@ -72,7 +73,14 @@ export class LoginPage implements OnInit {
     })
 
     await alert.present()
-}
+  }
+
+  showToast(msg) {
+    this.toastCtrl.create({
+      message: msg,
+      duration: 2000
+    }).then(toast => toast.present());
+  }
 
 
 }

@@ -57,7 +57,7 @@ export class ProfilePage implements OnInit {
 
   signout(){
       this.afAuth.auth.signOut().then(() =>{
-        this.route.navigate([''])
+        this.route.navigate(['']);
       })
   }
 

@@ -23,4 +23,6 @@ const routes: Routes = [
   ],
   declarations: [EventPage]
 })
-export class EventPageModule {}
+export class EventPageModule {
+    imageURL: string;
+}

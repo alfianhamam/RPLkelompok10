@@ -34,7 +34,7 @@ import { ShareModule } from './share.module';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    UserService
+    UserService,
   ],
   bootstrap: [AppComponent]
 })

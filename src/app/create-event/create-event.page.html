@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar style="--background:#C42928; --color:#FDFFF0">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center>create-event</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="container">
+    <div *ngIf="!imageURL">
+      <h1>
+        Upload your event poster here
+      </h1>
+      <label for="file-upload" class="custom-file-upload">
+        Upload Here
+      </label>
+      <input id="file-upload" type="file" (change)="fileChanged($event)">
+    </div>
+
+    <div *ngIf="imageURL" class="gambar">
+      <img src="https://ucarecdn.com/{{imageURL}}/">
+    </div>
+
+    <div id="input">
+      <ion-item>
+        <ion-label position="floating">Nama Event</ion-label>
+        <ion-input type="text" [(ngModel)]="namaEvent"></ion-input>
+      </ion-item>
+      <br>
+
+      <ion-item>
+        <ion-label position="floating">Lokasi</ion-label>
+        <ion-input type="text" [(ngModel)]="lokasi"></ion-input>
+      </ion-item>
+      <br>
+
+      <ion-item>
+        <ion-label position="floating">Waktu</ion-label>
+        <ion-input type="text" [(ngModel)]="waktu"></ion-input>
+      </ion-item>
+      <br>
+
+      <ion-item>
+        <ion-label position="floating">Deskripsi</ion-label>
+        <ion-textarea type="text" placeholder="Deskripsikan event mu disini" [(ngModel)]="deskripsi"></ion-textarea>
+      </ion-item>
+    </div>
+  </div>
+
+  <ion-button style="--background: #C42928" expand="block" shape="round" (click)=submitEvent()>Create Event</ion-button>
+
+
+</ion-content>

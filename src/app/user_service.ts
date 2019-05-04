@@ -4,7 +4,7 @@ import { first } from 'rxjs/operators'
 import { auth } from 'firebase/app';
 
 
-interface user{
+interface user {
     profilePic: string,
     nama: string,
     alamat: string,
@@ -15,60 +15,60 @@ interface user{
 }
 
 @Injectable()
-export class UserService{
+export class UserService {
     private user: user
 
     constructor(
         private afAuth: AngularFireAuth
-    ){
+    ) {
 
     }
 
-    setUser(user: user){
+    setUser(user: user) {
         this.user = user
     }
 
-    getUID(): string{
+    getUID(): string {
         return this.user.uid
     }
 
-    getNama(): string{
+    getNama(): string {
         return this.user.nama
     }
 
-    getAlamat(): string{
+    getAlamat(): string {
         return this.user.alamat
     }
 
-    getNo_hp(): string{
+    getNo_hp(): string {
         return this.user.no_hp
     }
 
-    getEmail(): string{
+    getEmail(): string {
         return this.user.email
     }
 
     reAuth(email: string, password: string) {
-		return this.afAuth.auth.currentUser.reauthenticateWithCredential(auth.EmailAuthProvider.credential(email, password))
+        return this.afAuth.auth.currentUser.reauthenticateWithCredential(auth.EmailAuthProvider.credential(email, password))
     }
-    
-    updatePassword(newpassword: string){
+
+    updatePassword(newpassword: string) {
         return this.afAuth.auth.currentUser.updatePassword(newpassword)
     }
 
-    updateEmail(newemail: string){
+    updateEmail(newemail: string) {
         return this.afAuth.auth.currentUser.updateEmail(newemail)
     }
 
-    updateAlamat(newalamat: string){
+    updateAlamat(newalamat: string) {
         return this.user.alamat = newalamat
     }
 
-    updateNo_hp(newno_hp: string){
+    updateNo_hp(newno_hp: string) {
         return this.user.no_hp = newno_hp
     }
 
-    updateNama(newnama: string){
+    updateNama(newnama: string) {
         return this.user.nama = newnama
     }
 }
