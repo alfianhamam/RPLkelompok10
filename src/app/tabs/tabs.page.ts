@@ -1,4 +1,4 @@
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -15,25 +15,24 @@ export class TabsPage implements OnInit {
     public afAuth: AngularFireAuth,
     private route: Router,
     private authGuard : AuthGuardService,
-    public alert: AlertController
+    public alert: AlertController,
+    public toastCtrl: ToastController
   ) { }
 
   ngOnInit() {
   }
 
-  async showalert(message: string){
-    const  alert = await this.alert.create({
-      message,
-      buttons : ['OK']
-    })
-
-    await alert.present()
+  showToast(msg) {
+    this.toastCtrl.create({
+      message: msg,
+      duration: 2000
+    }).then(toast => toast.present());
   }
 
   verifAuth(){
     if(this.authGuard.canActivate()===false){
-      this.showalert('Please login to see your profile');
-      this.route.navigate(['login'])
+      this.route.navigate(['login']);
+      this.showToast('Please login to see your profile');
     }
   }
 

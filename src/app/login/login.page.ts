@@ -51,7 +51,7 @@ export class LoginPage implements OnInit {
            uid: res.user.uid
           })
           this.authService.login();
-          this.route.navigate(['']);
+          this.route.navigate(['tabs','home']);
         }
 
         this.showToast("Welcome to Yuk Sehat")

@@ -30,6 +30,10 @@ export class AuthenticationService {
     })
   }
 
+  setfalse(){
+    this.authenticationState.next(false);
+  }
+
   isAuthenticated(){
     return this.authenticationState.value;
   }

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar style="--background:#C42928; --color:#FDFFF0">
+    <ion-title text-center>
+      News
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let article of data?.articles" (click)="openNews(article)">
+    <ion-img [src]="article.urlToImage"></ion-img>
+    <ion-card-content>
+      <ion-card-title>{{article.title}}</ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -63,6 +63,7 @@ export class CreateEventPage implements OnInit {
       waktu,
       deskripsi,
       author: this.user.getEmail(),
+      poster: imageURL,
       participants: []
     })
     this.showToast('Event has been publish');

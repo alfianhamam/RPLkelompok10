@@ -40,6 +40,8 @@ export class AppComponent {
           this.router.navigate(['']);
         }
       });
+
     });
+    this.authService.setfalse();
   }
 }

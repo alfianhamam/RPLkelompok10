@@ -8,7 +8,9 @@ const routes: Routes = [
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'edit-profile', loadChildren: './edit-profile/edit-profile.module#EditProfilePageModule' },
   { path: 'uploadpic', loadChildren: './uploadpic/uploadpic.module#UploadpicPageModule' },
-  { path: 'create-event', loadChildren: './create-event/create-event.module#CreateEventPageModule' }
+  { path: 'create-event', loadChildren: './create-event/create-event.module#CreateEventPageModule' },
+  { path: 'news-single', loadChildren: './news-single/news-single.module#NewsSinglePageModule' }
+
 ];
 
 @NgModule({
