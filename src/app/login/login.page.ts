@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../authentication.service';
 import { UserService } from './../user_service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -23,7 +24,8 @@ export class LoginPage implements OnInit {
     public afAuth: AngularFireAuth,
     public alert: AlertController,
     public user:UserService,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    private authService: AuthenticationService
   ) { }
 
   ngOnInit() {
@@ -48,7 +50,7 @@ export class LoginPage implements OnInit {
            profilePic,
            uid: res.user.uid
           })
-
+          this.authService.login();
           this.route.navigate(['']);
         }
 

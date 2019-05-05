@@ -1,3 +1,4 @@
+import { AuthGuardService } from './../auth-guard.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +14,7 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       { path: 'home', loadChildren: '../home/home.module#HomePageModule' },
-      { path: 'profile', loadChildren: '../profile/profile.module#ProfilePageModule' },
+      { path: 'profile', loadChildren: '../profile/profile.module#ProfilePageModule', canActivate: [AuthGuardService]},
       { path: 'event', loadChildren: '../event/event.module#EventPageModule' },
     ]
   },

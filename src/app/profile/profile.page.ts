@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../authentication.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
@@ -28,7 +29,8 @@ export class ProfilePage implements OnInit {
       private route: Router,
       private alert: AlertController,
       private user: UserService,
-      public afAuth: AngularFireAuth
+      public afAuth: AngularFireAuth,
+      private authService: AuthenticationService
   ) {
       this.mainuser= afs.doc(`users/${user.getUID()}`)
       this.sub = this.mainuser.valueChanges().subscribe(event => {
@@ -57,6 +59,7 @@ export class ProfilePage implements OnInit {
 
   signout(){
       this.afAuth.auth.signOut().then(() =>{
+        this.authService.logout();
         this.route.navigate(['']);
       })
   }

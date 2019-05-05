@@ -15,6 +15,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ShareModule } from './share.module';
+import { IonicStorageModule } from '@ionic/storage'
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ShareModule } from './share.module';
     AngularFireModule.initializeApp(firebaseconfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    ShareModule
+    ShareModule,
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,
