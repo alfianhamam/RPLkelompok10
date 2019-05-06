@@ -1,3 +1,4 @@
+import { EventService } from './../event.service';
 import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,12 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventPage implements OnInit {
 
-  imageURL: string
+  dt_event;
 
   constructor(
-    public http: Http
+    public http: Http,
+    private eventService: EventService
   ) { }
 
   ngOnInit() {
+    this.dt_event = this.eventService.currentEvent;
+    console.log(this.eventService.currentEvent);
   }
 }

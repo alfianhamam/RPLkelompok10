@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'edit-profile', loadChildren: './edit-profile/edit-profile.module#EditProfilePageModule' },
   { path: 'uploadpic', loadChildren: './uploadpic/uploadpic.module#UploadpicPageModule' },
   { path: 'create-event', loadChildren: './create-event/create-event.module#CreateEventPageModule' },
-  { path: 'news-single', loadChildren: './news-single/news-single.module#NewsSinglePageModule' }
+  { path: 'news-single', loadChildren: './news-single/news-single.module#NewsSinglePageModule' },
+  { path: 'event', loadChildren: './event/event.module#EventPageModule' },
 
 ];
 

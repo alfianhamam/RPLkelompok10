@@ -1,3 +1,4 @@
+import { EventService } from './../event.service';
 import { AuthenticationService } from './../authentication.service';
 import { AuthGuardService } from './../auth-guard.service';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -23,13 +24,15 @@ export class HomePage {
     public afs: AngularFirestore,
     public authGuard : AuthGuardService,
     public alert: AlertController,
-    public authService: AuthenticationService
+    public authService: AuthenticationService,
+    private eventService: EventService
     ){
       this.items = afs.collection('event').valueChanges();
       console.log(this.items)
   }
 
-  goevent(){
+  gotoEvent(item){
+    this.eventService.currentEvent = item;
     this.route.navigate(['event']);
   }
 

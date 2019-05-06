@@ -15,7 +15,6 @@ const routes: Routes = [
     children: [
       { path: 'home', loadChildren: '../home/home.module#HomePageModule' },
       { path: 'profile', loadChildren: '../profile/profile.module#ProfilePageModule', canActivate: [AuthGuardService]},
-      { path: 'event', loadChildren: '../event/event.module#EventPageModule' },
       { path: 'news', loadChildren: '../news/news.module#NewsPageModule' }
     ]
   },

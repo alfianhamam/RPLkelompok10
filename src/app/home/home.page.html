@@ -5,13 +5,11 @@
 		<ion-title text-center>
 			Yuk Sehat
 		</ion-title>
-
-		<ion-icon slot="end" size="large" name="search" button (click)="gosearch()"></ion-icon>
 	</ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-	<ion-card *ngFor="let item of items | async">
+	<ion-card *ngFor="let item of items | async" (click)="gotoEvent(item)">
 			<img src="https://ucarecdn.com/{{ item.poster }}/">
 		<ion-card-content>
 			<ion-card-title>{{item.namaEvent}}</ion-card-title>

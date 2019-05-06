@@ -1,9 +1,33 @@
 <ion-header>
   <ion-toolbar style="--background:#C42928; --color:#FDFFF0">
-    <ion-title>Event</ion-title>
+    <ion-title text-center>Event</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <img src="https://ucarecdn.com/{{ dt_event.poster }}/">
+    <ion-card-header>
+      <ion-card-title>{{dt_event.namaEvent}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{dt_event.deskripsi}}
+      <ion-list>
+        <ion-item>
+          <ion-label>Lokasi</ion-label>
+          <p>{{dt_event.lokasi}}</p>
+        </ion-item>
+        <ion-item>
+          <ion-label>Waktu</ion-label>
+          <p>{{dt_event.waktu}}</p>
+        </ion-item>
+        <ion-item>
+          <ion-label>Hubungi</ion-label>
+          <p>{{dt_event.author}}</p>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
