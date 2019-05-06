@@ -25,14 +25,18 @@ export class ProfilePage implements OnInit {
 
   constructor(
       public http: Http,
-      private afs: AngularFirestore,
+      public afs: AngularFirestore,
       private route: Router,
       private alert: AlertController,
-      private user: UserService,
+      public user: UserService,
       public afAuth: AngularFireAuth,
       private authService: AuthenticationService
   ) {
-      this.mainuser= afs.doc(`users/${user.getUID()}`)
+      
+  }
+
+  ngOnInit() {
+    this.mainuser = this.afs.doc(`users/${this.user.currentUser}`)
       this.sub = this.mainuser.valueChanges().subscribe(event => {
           this.nama = event.nama
           this.alamat = event.alamat
@@ -40,9 +44,6 @@ export class ProfilePage implements OnInit {
           this.email = event.email
           this.profilePic = event.profilePic
       })
-  }
-
-  ngOnInit() {
   }
 
   ngOnDestroy(){

@@ -5,6 +5,14 @@
 		<ion-title text-center>
 			Yuk Sehat
 		</ion-title>
+		<ion-buttons slot="end">
+			<ion-button *ngIf="this.state == true" (click)="signout()" style="--background:#C42928;">
+				Logout
+			</ion-button>
+			<ion-button *ngIf="state == false" (click)="signin()" style="--background:#C42928;">
+				Login
+			</ion-button>
+		</ion-buttons>
 	</ion-toolbar>
 </ion-header>
 

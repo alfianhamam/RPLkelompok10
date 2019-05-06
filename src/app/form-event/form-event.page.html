@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar style="--background:#FA8804; --color:#FDFFF0">
+    <ion-title text-center>Form Pendaftaran</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="https://ucarecdn.com/{{ dt_event.poster }}/">
+    <ion-card-header>
+        <ion-card-subtitle>Nama Event:</ion-card-subtitle>
+      <ion-card-title>{{dt_event.namaEvent}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Data diri:</p>
+      <ion-list>
+        <ion-item>
+          <ion-label>Nama</ion-label>
+          <p>{{ nama }}</p>
+        </ion-item>
+        <ion-item>
+          <ion-label>Email</ion-label>
+          <p>{{ email }}</p>
+        </ion-item>
+        <ion-item>
+          <ion-label>No Handphone</ion-label>
+          <p>{{ no_hp }}</p>
+        </ion-item>
+        <ion-item>
+          <ion-label>Alamat</ion-label>
+          <p>{{ alamat }}</p>
+        </ion-item>
+      </ion-list>
+
+      <ion-button style="--background: #C42928" expand="block" shape="round" (click)="submition()">Submit</ion-button>
+
+    </ion-card-content>
+  </ion-card>

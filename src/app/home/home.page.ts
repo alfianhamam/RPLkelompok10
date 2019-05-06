@@ -16,6 +16,7 @@ import { AlertController } from '@ionic/angular';
 })
 
 export class HomePage {
+  state;
   items: Observable<any[]>
 
   constructor(
@@ -27,6 +28,9 @@ export class HomePage {
     public authService: AuthenticationService,
     private eventService: EventService
     ){
+      this.authService.authenticationState.subscribe(state =>{
+        this.state = state
+      })
       this.items = afs.collection('event').valueChanges();
       console.log(this.items)
   }
@@ -71,6 +75,10 @@ export class HomePage {
       this.authService.logout();
       this.route.navigate(['']);
     })
+  }
+
+  signin(){
+    this.route.navigate(['login']);
   }
 }
 

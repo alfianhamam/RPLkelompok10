@@ -18,6 +18,7 @@ export class CreateEventPage implements OnInit {
   lokasi: string
   waktu: string
   deskripsi: string
+  harga: string
   
 
   constructor(
@@ -52,6 +53,7 @@ export class CreateEventPage implements OnInit {
     const lokasi = this.lokasi
     const waktu = this.waktu 
     const deskripsi = this.deskripsi
+    const harga = this.harga
 
     this.afs.doc(`users/${this.user.getUID()}`).update({
       event: firestore.FieldValue.arrayUnion(imageURL)
@@ -62,6 +64,7 @@ export class CreateEventPage implements OnInit {
       lokasi,
       waktu,
       deskripsi,
+      harga,
       author: this.user.getEmail(),
       poster: imageURL,
       participants: []

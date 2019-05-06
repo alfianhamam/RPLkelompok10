@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { EventService } from './../event.service';
 import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
@@ -13,11 +14,18 @@ export class EventPage implements OnInit {
 
   constructor(
     public http: Http,
-    private eventService: EventService
+    private eventService: EventService,
+    public route: Router
   ) { }
 
-  ngOnInit() {
+  ngOnInit(){
     this.dt_event = this.eventService.currentEvent;
     console.log(this.eventService.currentEvent);
   }
+
+  gotoForm(){
+    this.route.navigate(['form-event']);
+  }
+
+
 }

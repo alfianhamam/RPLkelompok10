@@ -16,6 +16,9 @@ interface user {
 
 @Injectable()
 export class UserService {
+
+    currentUser;
+    
     private user: user
 
     constructor(

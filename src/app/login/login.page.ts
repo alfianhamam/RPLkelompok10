@@ -50,6 +50,7 @@ export class LoginPage implements OnInit {
            profilePic,
            uid: res.user.uid
           })
+          this.user.currentUser = this.user.getUID()
           this.authService.login();
           this.route.navigate(['tabs','home']);
         }
