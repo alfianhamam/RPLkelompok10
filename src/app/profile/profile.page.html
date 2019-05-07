@@ -20,23 +20,23 @@
 
   </div>
 
-  <div class="profile-info" *ngIf="nama">
+  <div class="profile-info">
     <ion-list>
       <ion-item>
         <ion-label>Nama</ion-label>
-        <p>{{ nama }}</p>
+        <p>{{ userinfo.nama }}</p>
       </ion-item>
       <ion-item>
         <ion-label>Email</ion-label>
-        <p>{{ email }}</p>
+        <p>{{ userinfo.email }}</p>
       </ion-item>
       <ion-item>
         <ion-label>No Handphone</ion-label>
-        <p>{{ no_hp }}</p>
+        <p>{{ userinfo.no_hp }}</p>
       </ion-item>
       <ion-item>
         <ion-label>Alamat</ion-label>
-        <p>{{ alamat }}</p>
+        <p>{{ userinfo.alamat }}</p>
       </ion-item>
     </ion-list>
   </div>
@@ -45,16 +45,10 @@
     <ion-list-header>
       Statistics
     </ion-list-header>
-    <ion-item>
-      Event Done
+    <ion-item (click)="gotoUserEvent()">
+       Registered Event
       <ion-note slot="end">
-        {{done}}
-      </ion-note>
-    </ion-item>
-    <ion-item>
-      Total event
-      <ion-note slot="end">
-        {{total}}
+        {{userinfo.registered_event.length}}
       </ion-note>
     </ion-item>
   </ion-list>

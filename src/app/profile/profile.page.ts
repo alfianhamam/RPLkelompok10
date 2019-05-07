@@ -17,11 +17,7 @@ export class ProfilePage implements OnInit {
 
   mainuser: AngularFirestoreDocument
   sub
-  nama: string
-  alamat: string
-  no_hp: string
-  email: string
-  profilePic: string
+  userinfo
 
   constructor(
       public http: Http,
@@ -36,18 +32,10 @@ export class ProfilePage implements OnInit {
   }
 
   ngOnInit() {
-    this.mainuser = this.afs.doc(`users/${this.user.currentUser}`)
-      this.sub = this.mainuser.valueChanges().subscribe(event => {
-          this.nama = event.nama
-          this.alamat = event.alamat
-          this.no_hp = event.no_hp
-          this.email = event.email
-          this.profilePic = event.profilePic
+    this.mainuser = this.afs.doc(`users/${this.user.getUID()}`)
+      this.mainuser.valueChanges().subscribe(event => {
+          this.userinfo = event
       })
-  }
-
-  ngOnDestroy(){
-    this.sub.unsubscribe()
   }
 
   gotoedit(){
